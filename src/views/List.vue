@@ -1,13 +1,37 @@
 <template>
   <div>
     <h1>Data from API</h1>
-    <ul>
-      <!-- <li v-for="item in data" :key="item.id">{{ item.id }}</li> -->
-      <li v-for="item in data" :key="item.id">
-        <img :src="item.image" alt="" style="height: 50px" />
-        <p>{{ item.title }}</p>
-      </li>
-    </ul>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-header"></div>
+
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Created At</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in data" :key="item.id">
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.course }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.phone }}</td>
+                <td>{{ item.created_at }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,7 +44,7 @@ const data = ref([]); // Store the fetched data here
 const fetchData = () => {
   // Make a GET request to the API using Axios
   axios
-    .get("https://fakestoreapi.com/products")
+    .get("http://127.0.0.1:8000/api/students")
     .then((response) => {
       data.value = response.data; // Update the data property with the API response
     })

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import List from "../views/List.vue";
 import Add from "../views/Add.vue";
+import Edit from "../views/Edit.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,12 @@ const router = createRouter({
       path: "/add",
       name: "add",
       component: Add,
+    },
+    {
+      path: "/edit/:id?",
+      name: "edit",
+      component: Edit,
+      props: true,
     },
     {
       path: "/about",

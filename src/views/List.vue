@@ -35,6 +35,9 @@
                 <td>{{ item.phone }}</td>
                 <td>{{ item.created_at }}</td>
                 <td>
+                  <RouterLink :to="'/edit/' + item.id" class="btn btn-info">
+                    Edit
+                  </RouterLink>
                   <a @click="deleteStudent(item.id)" class="btn btn-danger"
                     >Delete</a
                   >

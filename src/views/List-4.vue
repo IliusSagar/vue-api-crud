@@ -34,11 +34,9 @@
                 <td>{{ item.email }}</td>
                 <td>{{ item.phone }}</td>
                 <td>{{ item.created_at }}</td>
-                <td>
-                  <a @click="deleteStudent(item.id)" class="btn btn-danger"
-                    >Delete</a
-                  >
-                </td>
+                <button @click="deleteStudent(item.id)" class="btn btn-danger">
+                  Delete
+                </button>
               </tr>
             </tbody>
           </table>
